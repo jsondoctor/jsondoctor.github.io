@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jsonDoctor</title>
+    <!--css-->
+    <link rel="icon" href="vendor/icon.png" />
+    <link rel="stylesheet" href="vendor/main.min.css" />
+    <!--scripts-->
+    <script src="vendor/jquery-3.5.1.min.js"></script>
+    <script src="vendor/hive.min.js"></script>
+    <script src="vendor/highlight.pack.min.js"></script>
+    <script src="vendor/codejar.min.js"></script>
+    <script src="vendor/main.min.js"></script>
+  </head>
+  <body>
+    <div id="app" class="hidden">
+      <div id="header">
+        <div id="logo_wrapper">
+          <span class="logo logo__small">json</span>
+          <span class="logo logo__large">doctor</span>
+        </div>
+        <div id="nav">
+          <span class="nav_b nav_selected" nav="true" pg_num="1">broadcast</span>
+        </div>
+      </div>
+      <!-- Boradcast Page -->
+      <div class="body_app hidden" id="p__broadcast">
+        <div class="p__wrapper">
+          <div id="body__forum">
+            <span class="code_span">
+              <span class="m">hive</span>
+              <span class="a">.</span>
+              <span class="p">broadcast</span>
+              <span class="a">.</span>
+              <span class="c">customJson</span>
+              <span class="a">(</span>
+            </span>
+            <span class="code_span">
+              <span>&emsp;</span>
+              <span class="s">"</span>
+              <input id="private_key" type="password" class="input_d s" placeholder="Private Key"/>
+              <span class="s">"</span>
+              <span class="a">,</span>
+            </span>
+            <span class="code_span">
+              <span>&emsp;</span>
+              <span class="s">"</span>
+              <input id="username" class="input_d s" placeholder="Required Auth"/>
+              <span class="s">"</span>
+              <span class="a">,</span>
+            </span>
+            <span class="code_span">
+              <span>&emsp;</span>
+              <span class="s">"</span>
+              <input id="json_id" class="input_d s" placeholder="ID"/>
+              <span class="s">"</span>
+              <span class="a">,</span>
+            </span>
+            <span class="code_span json_span">
+              <span>&emsp;</span>
+              <span class="s">"</span>
+              <!-- code editor -->
+              <div id="editor" class="input_d editor_empty">JSON</div>
+              <span class="s">"</span>
+              <span class="a">,</span>
+            </span>
+            <span class="code_span">
+              <span>&emsp;</span>
+              <span class="f">function</span>
+              <span class="a">(</span>
+              <span class="p">err</span>
+              <span class="a">,&nbsp;</span>
+              <span class="p">result</span>
+              <span class="a">)</span>
+              <span class="a">&nbsp;</span>
+              <span class="a">{</span>
+            </span>
+            <span class="code_span">
+              <span>&emsp;&emsp;</span>
+              <span class="p">console</span>
+              <span class="a">.</span>
+              <span class="c">log</span>
+              <span class="a">(</span>
+              <span class="p">err</span>
+              <span class="a">,&nbsp;</span>
+              <span class="p">result</span>
+              <span class="a">)</span>
+            </span>
+            <span class="code_span">
+              <span class="a">}</span>
+              <span class="a">)</span>
+            </span>
+          </div>
+          <div id="body__controls">
+            <div id="top__controls">
+              <div class="top_c_div nomargin" id="temp_div">
+                <div class="select_wrapper">
+                  <span>Templates</span>
+                  <button class="select_normal template_button tbs">Hive Engine</button>
+                  <button class="select_normal template_button tbs">Blog Operations</button>
+                  <button class="select_normal template_button tbs">Scot Claim Token</button>
+                  <button class="select_normal template_button tbs crossb">X</button>
+                </div>
+              </div>
+              <div class="top_c_div hidden">
+                <div class="select_wrapper hidden" id="sub_t_heading">
+                  <span>Operations</span>
+                </div>
+              </div>
+              <div class="top_c_div hidden nomargin">
+                <div class="select_wrapper hidden" id="sub_templates"></div>
+              </div>
+            </div>
+            <div id="bottom__controls">
+              <div class="top_c_div">
+                <div class="select_wrapper">
+                  <span>Use Keychain</span>
+                  <select class="select_normal" id="use_keychain">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                  </select>
+                </div>
+              </div>
+              <div class="top_c_div">
+                <div class="select_wrapper">
+                  <span>RPC Server</span>
+                  <select class="select_normal" id="rpc_server">
+                      <option value="https://anyx.io/">anyx.io</option>
+                      <option value="https://api.hive.blog/">api.hive.blog</option>
+                      <option value="https://api.deathwing.me/">api.deathwing.me</option>
+                  </select>
+                </div>
+              </div>              
+              <div class="top_c_div">
+                <div class="select_wrapper">
+                  <span>Required Auth Type</span>
+                  <select class="select_normal" id="required_auth_type">
+                      <option value="posting">Posting</option>
+                      <option value="active">Active</option>
+                  </select>
+                </div>
+                <div class="select_wrapper">
+                  <button id="broadcast" class="button_g">Broadcast</button>
+                </div>
+              </div>
+              <div class="top_c_div" id="broadcast_log_wr">
+                <div id="broadcast_log">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="loader"></div>
+  </body>
+</html>
