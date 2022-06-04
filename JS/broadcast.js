@@ -29,7 +29,7 @@ const broadcast = function(data, callback) {
       hive_keychain.requestCustomJson(
         data.username,
         data.json_id,
-        data.required_auth_type,
+        data.required_auth_type.charAt(0).toUpperCase() + data.required_auth_type.slice(1),
         data.json,
         "Broadcasting through Json Doctor",
         function(response) {
